@@ -5,6 +5,7 @@ description = "Separate content and style for CV generation"
 authors = ["Dror Atariah <drorata@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/drorata/foo_cv"
 packages = [{include = "foo_cv"}]
 
 [tool.poetry.dependencies]

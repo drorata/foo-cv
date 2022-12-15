@@ -46,5 +46,5 @@ def generate_text(
         f.write(rendered_content)
 
 
-if __name__ == "__main__":
+def main():
     app()

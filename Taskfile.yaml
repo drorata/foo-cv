@@ -9,7 +9,7 @@ tasks:
 
   json-to-tex:
     cmds:
-      - poetry run python foo_cv/main.py cv_template.tex.jinja content.json foo.tex
+      - poetry run foo-cv cv_template.tex.jinja content.json foo.tex
 
   tex-to-pdf:
     cmds:

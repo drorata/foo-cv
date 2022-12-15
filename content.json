@@ -1,0 +1,98 @@
+{
+    "bio_data": {
+        "firstname": "Ducky",
+        "lastname": "Duck",
+        "linkedin_id": "d_duck",
+        "github_id": "git_duck",
+        "website": "duck-at-lake.com",
+        "profile_filename": "profile-pic",
+        "email": "dduck@lake.com",
+        "phone": "+999 (321) 321 654 987",
+        "stars": [
+            "list",
+            "of",
+            "keywords"
+        ]
+    },
+    "summary": {
+        "points": [
+            "A few one liners",
+            "That can summarize who you are"
+        ]
+    },
+    "skills": [
+        {
+            "type": "Type/category fo the skill",
+            "items": [
+                "Items",
+                "Related",
+                "to",
+                "Skill",
+                "see example"
+            ]
+        },
+        {
+            "type": "Programming languages",
+            "items": [
+                "Python",
+                "Java",
+                "R",
+                "bash"
+            ]
+        }
+    ],
+    "experiences": [
+        {
+            "title": "Job title",
+            "organization": "Company name",
+            "link": "https://www.example.com",
+            "location": "City, Country",
+            "from": "MON. YYYY",
+            "to": "MON. YYYY or Present",
+            "details": "Details about the position. All in one line. Formatting it will be handled by someone else.",
+            "job_highlights": [
+                "Some",
+                "highlights",
+                "for this position"
+            ]
+        },
+        {
+            "title": "Job title",
+            "organization": "Company name",
+            "link": "https://www.example.com",
+            "location": "City, Country",
+            "from": "Nov. 2010",
+            "to": "Dec. 2020",
+            "details": "Details about the position. All in one line. Formatting it will be handled by someone else.",
+            "job_highlights": [
+                "Some",
+                "highlights",
+                "for this position"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Ph.D.",
+            "major": "Major name",
+            "institution": "Name of institution",
+            "from": 2008,
+            "to": 2014,
+            "gpa": "Cum Laude"
+        }
+    ],
+    "languages": [
+        {
+            "name": "Quenya",
+            "level": "Fluent"
+        },
+        {
+            "name": "Klingon",
+            "level": "Advanced"
+        },
+        {
+            "name": "Hebrew",
+            "level": "Native"
+        }
+    ]
+}

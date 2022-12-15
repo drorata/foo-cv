@@ -1,0 +1,27 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  build-LaTeX-image:
+    cmds:
+      - docker build -t latex -f LaTeX.Dockerfile .
+
+  json-to-tex:
+    cmds:
+      - poetry run python foo_cv/main.py cv_template.tex.jinja content.json foo.tex
+
+  tex-to-pdf:
+    cmds:
+      - docker run -it --rm -v $PWD:/prj latex foo.tex
+
+  clean:
+    cmds:
+      - rm -f foo.tex foo.aux foo.out foo.log texput.log
+
+  build-cv:
+    desc: Build the CV from foo.tex
+    cmds:
+      - task: json-to-tex
+      - task: tex-to-pdf
+      - task: clean

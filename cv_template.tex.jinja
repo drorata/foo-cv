@@ -1,0 +1,83 @@
+\documentclass[11pt,a4paper,colorlinks,linkcolor=green]{moderncv}
+
+\moderncvtheme[blue]{classic}
+\definecolor{color2}{rgb}{0.,0.,0.}% dark grey
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.8]{geometry}
+\usepackage{xstring}
+\renewcommand*{\namefont}{\Huge\scshape}
+
+% see: https://tex.stackexchange.com/q/30720/412
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\firstname{\VAR{ bio_data["firstname"] }}
+\familyname{\mbox{\VAR{ bio_data["lastname"] }}}
+\title{%
+    \small %
+    \BLOCK{ for star_item in bio_data["stars"] }
+    \VAR{star_item}\BLOCK{ if not loop.last} $\star$\BLOCK{ endif } %
+    \BLOCK{ endfor }%
+}%
+\phone{\VAR{ bio_data["phone"] }}
+\email{\VAR{ bio_data["email"] }}
+\social[linkedin]{\VAR{ bio_data["linkedin_id"] }}
+\social[github]{\VAR{ bio_data["github_id"] }}
+\homepage{\VAR{ bio_data["website"] }}
+\photo{\VAR{ bio_data["profile_filename"] }}
+
+\definecolor{see}{rgb}{0.5,0.5,0.5}% for web links
+\newcommand{\up}[1]{\ensuremath{^\textrm{\scriptsize#1}}}% for text subscripts
+\renewcommand{\labelitemi}{$\circ$}
+
+
+\begin{document}
+\definecolor{links}{gray}{0.1}
+\hypersetup{urlcolor=links}
+\maketitle
+
+\vspace*{-1cm}
+
+\section{\textsc{Qualifications summary}}
+  \BLOCK{ for summary_item in summary["points"] }
+  \cvitem{\textbullet}{\VAR{summary_item}}%
+  \BLOCK{ endfor }
+
+
+\section{\textsc{Technical Skills}}
+  \BLOCK{ for skill_cat in skills }
+  \cvitem{\textbullet}{\textbf{\VAR{skill_cat["type"]}:}
+    \BLOCK{ for item in skill_cat["items"] }
+      \VAR{item}\BLOCK{ if not loop.last }, \BLOCK{ endif}\BLOCK{ endfor }}
+    \BLOCK{ endfor }
+
+\section{\textsc{Professional Experience}}
+  %\cventry{years}{degree/job title}{institution/employer}{localization}{grade}{description}
+  \BLOCK{ for exp_entry in experiences}
+    \cventry{\VAR{exp_entry["from"]} - \VAR{exp_entry["to"]}}{\VAR{exp_entry["title"]}}{{\href{\VAR{exp_entry["link"]}}{\VAR{exp_entry["organization"]}}}}{\VAR{exp_entry["location"]}}{}{
+			{
+				\VAR{exp_entry["details"]}\endgraf
+        \emph{Some Highlights:}\begin{itemize}
+          \BLOCK{ for highlight in exp_entry["job_highlights"] }
+          \item \VAR{highlight}
+          \BLOCK{ endfor }
+        \end{itemize}
+			}
+		}
+  \BLOCK{ endfor }
+
+\section{\textsc{Education}}
+  \BLOCK{ for edu in education }
+    \cventry{\VAR{edu["to"]}}{\VAR{edu["degree"]}, \VAR{edu["major"]}}{\VAR{edu["institution"]}}{}{\VAR{edu["gpa"]}}{}
+  \BLOCK{ endfor }
+
+\section{\textsc{Languages}}
+  \BLOCK{ for lang in languages}
+    \cvitem{\textbullet}{\textbf{\VAR{lang["name"]}:} \VAR{lang["level"]}}
+  \BLOCK{ endfor }
+
+\end{document}

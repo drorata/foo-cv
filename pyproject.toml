@@ -16,6 +16,26 @@ typer = { version="^0.7.0", extras=["all"] }
 [tool.poetry.scripts]
 foo-cv = "foo_cv.cli:main"
 
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.19.3"
+pytest = "^7.2.0"
+isort = "^5.11.3"
+flake8 = "^6.0.0"
+mypy = "^0.991"
+pytest-cov = "^4.0.0"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = "mistletoe.*"
+ignore_missing_imports = true
+
+[tool.isort]
+profile = "black"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

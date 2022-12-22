@@ -1,2 +1,9 @@
+.vscode/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+.coverage
+
 __pycache__/
 scratch.ipynb

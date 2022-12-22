@@ -3,6 +3,13 @@
 version: "3"
 
 tasks:
+  validate-code:
+    desc: Make sure the code is clean
+    cmds:
+      - poetry run isort --check .
+      - poetry run flake8 .
+      - poetry run pytest --cov-report term-missing --cov=foo_cv tests/
+
   build-LaTeX-image:
     cmds:
       - docker build -t latex -f LaTeX.Dockerfile .

@@ -2,6 +2,8 @@
 
 version: "3"
 
+dotenv: [".env"]
+
 tasks:
   validate-code:
     desc: Make sure the code is clean
@@ -9,6 +11,11 @@ tasks:
       - poetry run isort --check .
       - poetry run flake8 .
       - poetry run pytest --cov-report term-missing --cov=foo_cv tests/
+
+  pypi-publish:
+    desc: Build and publish the package to PyPI
+    cmds:
+      - poetry publish --build --username $FOO_CV_PYPI_USERNAME --password $FOO_CV_PYPI_PASSWORD
 
   build-LaTeX-image:
     cmds:

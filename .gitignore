@@ -2,8 +2,11 @@
 .pytest_cache/
 .mypy_cache/
 .ipynb_checkpoints/
+dist/
 
 .coverage
 
 __pycache__/
 scratch.ipynb
+
+.env

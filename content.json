@@ -28,7 +28,8 @@
                 "Related",
                 "to",
                 "Skill",
-                "see example"
+                "see example",
+                "Special chars like & can be used as well"
             ]
         },
         {
@@ -37,7 +38,8 @@
                 "Python",
                 "Java",
                 "R",
-                "bash"
+                "bash",
+                "what happens with `inline code`?"
             ]
         }
     ],
@@ -49,7 +51,7 @@
             "location": "City, Country",
             "from": "MON. YYYY",
             "to": "MON. YYYY or Present",
-            "details": "Details about the position. All in one line. Formatting it will be handled by someone else.",
+            "details": "Details about the *position*. All in one line. Formatting it will be handled by someone else.",
             "job_highlights": [
                 "Some",
                 "highlights",

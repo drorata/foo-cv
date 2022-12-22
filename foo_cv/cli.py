@@ -1,13 +1,16 @@
-import typer
-from pathlib import Path
-import jinja2
 import json
+from pathlib import Path
+
+import jinja2
+import typer
+
+from foo_cv import utils
 
 app = typer.Typer()
 app = typer.Typer(rich_markup_mode="rich")
 
 
-def get_latex_jinja_env(template_base_path: Path):
+def get_latex_jinja_env(template_base_path: Path) -> jinja2.Environment:
     return jinja2.Environment(
         block_start_string="\BLOCK{",  # noqa:W605
         block_end_string="}",
@@ -36,6 +39,7 @@ def generate_text(
 
     template = latex_jinja_env.get_template(template.name)
 
+    content = utils.latex_render_content(content)
     rendered_content = template.render(**content)
 
     if output is None:

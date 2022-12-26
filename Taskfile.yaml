@@ -10,7 +10,7 @@ tasks:
     cmds:
       - poetry run isort --check .
       - poetry run flake8 .
-      - poetry run pytest --cov-report term-missing --cov=foo_cv tests/
+      - poetry run pytest --cov-report term-missing --cov-report=xml --cov=foo_cv tests/
 
   pypi-publish:
     desc: Build and publish the package to PyPI

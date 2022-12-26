@@ -50,5 +50,5 @@ def generate_text(
         f.write(rendered_content)
 
 
-def main():
+def main():  # pragma: no cover
     app()

@@ -10,3 +10,4 @@ __pycache__/
 scratch.ipynb
 
 .env
+coverage.xml

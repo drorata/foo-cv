@@ -12,11 +12,11 @@ app = typer.Typer(rich_markup_mode="rich")
 
 def get_latex_jinja_env(template_base_path: Path) -> jinja2.Environment:
     return jinja2.Environment(
-        block_start_string="\BLOCK{",  # noqa:W605
+        block_start_string="\\BLOCK{",
         block_end_string="}",
-        variable_start_string="\VAR{",  # noqa:W605
+        variable_start_string="\\VAR{",
         variable_end_string="}",
-        comment_start_string="\#{",  # noqa:W605
+        comment_start_string="\\#{",
         comment_end_string="}",
         line_statement_prefix="%%",
         line_comment_prefix="%#",

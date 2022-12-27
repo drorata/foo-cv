@@ -13,7 +13,7 @@ SUPPORTED_TOKENS = (
     mistletoe.span_token.Strong,
     mistletoe.span_token.Strong,
     # TODO: Add support of inline code in LaTeX
-    mistletoe.span_token.InlineCode,
+    # mistletoe.span_token.InlineCode,
 )
 
 

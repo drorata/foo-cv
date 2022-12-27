@@ -1,5 +1,11 @@
 # FOO CV
 
+[![codecov](https://codecov.io/gh/drorata/foo-cv/branch/main/graph/badge.svg?token=N44MD6UJ3Z)](https://codecov.io/gh/drorata/foo-cv)
+![PyPI](https://img.shields.io/pypi/v/foo-cv)
+![GitHub](https://img.shields.io/github/license/drorata/foo-cv)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/foo-cv)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/drorata/foo-cv/test_code.yml)
+
 > Separate content and design for CV
 
 We provide two files:

@@ -18,6 +18,6 @@ The provided Python script merely connects the two and generates a TeX file that
 
 ## The profile picture
 
-The picture was created using [Dalle](https://labs.openai.com/) given the description:
+The [picture](./profile-pic.jpg) was created using [Dalle](https://labs.openai.com/) given the description:
 
 > Create a portrait of Elrond mixed with Worf

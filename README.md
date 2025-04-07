@@ -16,6 +16,14 @@ The provided Python script merely connects the two and generates a TeX file that
 
 [`json_resume`](https://github.com/prat0318/json_resume) is the main source of inspiration for this.
 
+## Try this out
+
+You can easily try this out once you have [`task`](https://taskfile.dev/) and [`podman`](https://podman.io/) installed.
+You will need to:
+1. Get the environment ready; run `poetry install` for that.
+1. Build a helper docker image: `task build-LaTeX-image` will take care of that. Next,
+2. Run the full flow: `task build-cv` which will generate a PDF.
+
 ## The profile picture
 
 The [picture](./profile-pic.jpg) was created using [Dalle](https://labs.openai.com/) given the description:

@@ -19,7 +19,7 @@ tasks:
 
   build-LaTeX-image:
     cmds:
-      - docker build -t latex -f LaTeX.Dockerfile .
+      - podman build -t latex -f LaTeX.Dockerfile .
 
   json-to-tex:
     cmds:
@@ -27,7 +27,7 @@ tasks:
 
   tex-to-pdf:
     cmds:
-      - docker run -it --rm -v $PWD:/prj latex foo.tex
+      - podman run -it --rm -v $PWD:/prj latex foo.tex
 
   clean:
     cmds:

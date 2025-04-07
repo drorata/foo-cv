@@ -1,17 +1,16 @@
 from typing import Any, Dict
 
-import mistletoe
 from loguru import logger
-from mistletoe import Document
+from mistletoe import Document, span_token
 from mistletoe.latex_renderer import LaTeXRenderer
 
 SUPPORTED_TOKENS = (
-    mistletoe.span_token.Emphasis,
-    mistletoe.span_token.Link,
-    mistletoe.span_token.RawText,
-    mistletoe.span_token.Strikethrough,
-    mistletoe.span_token.Strong,
-    mistletoe.span_token.Strong,
+    span_token.Emphasis,
+    span_token.Link,
+    span_token.RawText,
+    span_token.Strikethrough,
+    span_token.Strong,
+    span_token.Strong,
     # TODO: Add support of inline code in LaTeX
     # mistletoe.span_token.InlineCode,
 )
@@ -96,7 +95,7 @@ def latex_render_content(content: Dict[str, Any]) -> Dict[str, Any]:
                 if isinstance(item, dict):
                     latex_list.append(latex_render_content(item))
                 if isinstance(item, (str, int)):
-                    latex_list.append(render_latex(item, minimal=True))
+                    latex_list.append(render_latex(str(item), minimal=True))
             transformed_content[key] = latex_list
 
     return transformed_content

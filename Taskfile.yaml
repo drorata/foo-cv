@@ -15,7 +15,7 @@ tasks:
   pypi-publish:
     desc: Build and publish the package to PyPI
     cmds:
-      - poetry publish --build --username $FOO_CV_PYPI_USERNAME --password $FOO_CV_PYPI_PASSWORD
+      - poetry publish --build --username __token__
 
   build-LaTeX-image:
     cmds:

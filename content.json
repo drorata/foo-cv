@@ -2,8 +2,8 @@
     "bio_data": {
         "firstname": "Ducky",
         "lastname": "Duck",
-        "linkedin_id": "d_duck",
-        "github_id": "git_duck",
+        "linkedin_id": "dDuck",
+        "github_id": "gitDuck",
         "website": "duck-at-lake.com",
         "profile_filename": "profile-pic",
         "email": "dduck@lake.com",

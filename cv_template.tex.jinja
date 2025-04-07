@@ -1,7 +1,6 @@
 \documentclass[11pt,a4paper,colorlinks,linkcolor=green]{moderncv}
 
 \moderncvtheme[blue]{classic}
-\definecolor{color2}{rgb}{0.,0.,0.}% dark grey
 \usepackage[utf8]{inputenc}
 \usepackage[scale=0.8]{geometry}
 \usepackage{xstring}
@@ -20,7 +19,8 @@
 \title{%
     \small %
     \BLOCK{ for star_item in bio_data["stars"] }
-    \VAR{star_item}\BLOCK{ if not loop.last} $\star$\BLOCK{ endif } %
+      \VAR{star_item}
+        \BLOCK{ if not loop.last} $\star$\BLOCK{ endif } %
     \BLOCK{ endfor }%
 }%
 \phone{\VAR{ bio_data["phone"] }}
@@ -44,26 +44,29 @@
 
 \section{\textsc{Qualifications summary}}
   \BLOCK{ for summary_item in summary["points"] }
-  \cvitem{\textbullet}{\VAR{summary_item}}%
+    \cvitem{\textbullet}{\VAR{summary_item}}%
   \BLOCK{ endfor }
 
 
 \section{\textsc{Technical Skills}}
   \BLOCK{ for skill_cat in skills }
-  \cvitem{\textbullet}{\textbf{\VAR{skill_cat["type"]}:}
+    \cvitem{\textbullet}{\textbf{\VAR{skill_cat["type"]}:}
     \BLOCK{ for item in skill_cat["items"] }
-      \VAR{item}\BLOCK{ if not loop.last }, \BLOCK{ endif}\BLOCK{ endfor }}
-    \BLOCK{ endfor }
+      \VAR{item}\BLOCK{ if not loop.last }, \BLOCK{ endif }
+    \BLOCK{ endfor }}
+  \BLOCK{ endfor }
 
 \section{\textsc{Professional Experience}}
   %\cventry{years}{degree/job title}{institution/employer}{localization}{grade}{description}
   \BLOCK{ for exp_entry in experiences}
-    \cventry{\VAR{exp_entry["from"]} - \VAR{exp_entry["to"]}}{\VAR{exp_entry["title"]}}{{\href{\VAR{exp_entry["link"]}}{\VAR{exp_entry["organization"]}}}}{\VAR{exp_entry["location"]}}{}{
+    \cventry{\VAR{exp_entry["from"]} - \VAR{exp_entry["to"]}}
+            {\VAR{exp_entry["title"]}}{{\href{\VAR{exp_entry["link"]}}
+            {\VAR{exp_entry["organization"]}}}}{\VAR{exp_entry["location"]}}{}{
 			{
 				\VAR{exp_entry["details"]}\endgraf
         \emph{Some Highlights:}\begin{itemize}
           \BLOCK{ for highlight in exp_entry["job_highlights"] }
-          \item \VAR{highlight}
+            \item \VAR{highlight}
           \BLOCK{ endfor }
         \end{itemize}
 			}
@@ -72,7 +75,8 @@
 
 \section{\textsc{Education}}
   \BLOCK{ for edu in education }
-    \cventry{\VAR{edu["to"]}}{\VAR{edu["degree"]}, \VAR{edu["major"]}}{\VAR{edu["institution"]}}{}{\VAR{edu["gpa"]}}{}
+    \cventry{\VAR{edu["to"]}}{\VAR{edu["degree"]}, \VAR{edu["major"]}}
+    {\VAR{edu["institution"]}}{}{\VAR{edu["gpa"]}}{}
   \BLOCK{ endfor }
 
 \section{\textsc{Languages}}

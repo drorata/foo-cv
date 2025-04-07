@@ -26,11 +26,17 @@ def get_latex_jinja_env(template_base_path: Path) -> jinja2.Environment:
     )
 
 
-@app.command()
+@app.command(help="Generate a LaTeX file from a Jinja2 template and a JSON file")
 def generate_text(
-    template: Path = typer.Argument(...),
-    content: Path = typer.Argument(...),
-    output: Path = typer.Argument(None),
+    template: Path = typer.Argument(
+        ..., help="Path to the the Jinja2 template that will be used"
+    ),
+    content: Path = typer.Argument(
+        ..., help="Path to the JSON with the content of the CV"
+    ),
+    output: Path = typer.Argument(
+        None, help="Where to save and how to name the resulting TeX file"
+    ),
 ):
     with open(content, "r") as f:
         content = json.load(f)
